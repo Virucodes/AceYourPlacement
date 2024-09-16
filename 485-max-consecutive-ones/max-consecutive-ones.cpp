@@ -7,15 +7,15 @@ public:
         {
             if(nums[i]==0)
             {
-                
-                maX = max(maX,count);
-                count=0;
+              count=0;
             }
             else
             count++;
 
+            maX = max(maX,count);
+
         }
-        if(i==nums.size())  maX = max(maX,count);
+       
         return maX;
 
     }
