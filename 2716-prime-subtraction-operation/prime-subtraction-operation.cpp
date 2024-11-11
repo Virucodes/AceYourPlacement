@@ -16,7 +16,7 @@ public:
         {
             if(isPrime(i)) return i;
         }
-        return -1;
+        return 0;
     }
     bool primeSubOperation(vector<int>& nums) {
         
@@ -27,14 +27,8 @@ public:
 
              if(bound<=0)return false;
 
-              int largestPrime = 0;
-            for (int j = bound - 1; j >= 2; j--) {
-                if (isPrime(j)) {
-                    largestPrime = j;
-                    break;
-                }
-            }
-             nums[i]-=largestPrime;
+             int largestPrime1 = largestPrime(bound);
+             nums[i]-=largestPrime1;
         }
         return true;
     }
