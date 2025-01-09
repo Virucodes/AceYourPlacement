@@ -5,7 +5,7 @@ public:
         int count=0;
         for(auto word: words){
 
-            if(word.compare(0,pref.length(),pref)==0) count++;
+            if(word.size()>=pref.size() && word.compare(0,pref.length(),pref)==0) count++;
 
         }
         return count;
