@@ -1,47 +1,28 @@
 class Solution {
 public:
     void setZeroes(vector<vector<int>>& matrix) {
-       int m = matrix.size();
-       int n = matrix[0].size();
+        
+        int N = matrix.size();
+        int M = matrix[0].size();
+        vector<int> rows(N);
+        vector<int> cols(M);
 
-       vector<vector<int>> visited = matrix;
-
-       for(int i=0;i<m;i++)
-       {
-           for(int j=0;j<n;j++)
-           {
-              if(matrix[i][j]==0)
-              {
-                 for(int k=0;k<n;k++)
-                 {
-                    visited[i][k]=0;
+        for(int i=0;i<N;i++){
+            for(int j=0;j<M;j++){
+                 
+                 if(matrix[i][j] == 0){
+                    rows[i] = 1;
+                    cols[j] = 1;
                  }
-              }
-           }
-       }
-
-       for(int i=0;i<m;i++)
-       {
-           for(int j=0;j<n;j++)
-           {
-              if(matrix[i][j]==0)
-              {
-                 for(int k=0;k<m;k++)
-                 {
-                    visited[k][j]=0;
+            }
+        }
+        for(int i=0;i<N;i++){
+            for(int j=0;j<M;j++){
+                 
+                 if(rows[i] || cols[j]){
+                     matrix[i][j] = 0;
                  }
-              }
-           }
-       }
-
-       for(int i=0;i<m;i++)
-       {
-          for(int j=0;j<n;j++)
-          {
-              matrix[i][j]= visited[i][j];
-          }
-       }
-
-       
+            }
+        }
     }
 };
