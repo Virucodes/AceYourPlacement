@@ -8,14 +8,19 @@ public:
         vector<vector<int>> matrix1(M, vector<int>(N));
 
 
-        for(int i=0;i<N;i++)
+        for(int i=0;i<N-1;i++)
         {
-            for(int j=0; j<M ;j++){
+            for(int j=i+1; j<M;j++){
 
-                matrix1[j][N-i-1] = matrix[i][j];
+                swap(matrix[i][j],matrix[j][i]);
             }
         }
 
-        matrix = matrix1;
+        for(int i=0;i<N;i++){
+            reverse(matrix[i].begin(), matrix[i].end());
+        }
+        
+
+        
     }
 };
