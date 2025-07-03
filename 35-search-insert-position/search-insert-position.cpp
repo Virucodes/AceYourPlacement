@@ -14,11 +14,11 @@ public:
                     start = mid + 1;
                 }
                 else{
-                    index = mid;
+              
                     end = mid -1;
                 }
 
         }
-        return index;
+        return start;
     }
 };
